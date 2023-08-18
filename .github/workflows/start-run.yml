@@ -4,19 +4,19 @@ on:
   workflow_dispatch:
     inputs:
       runId:
-        description: 'Run ID'     
+        description: 'Run ID (ex: 9341)'     
         required: false
         default: ''
       portal:
-        description: 'Portal (acp, ap, cp, lis, lp, pp, tp)'
+        description: 'Portal (ex: acp, ap, cp, lis, lp, pp, tp)'
         required: false
         default: ''
       grep:
-        description: 'Grep'
+        description: 'Grep (ex: 72831, C72831)'
         required: false
         default: ''
       test:
-        description: 'Filename'
+        description: 'Test filename (ex: user, practiceGroup)'
         required: false
         default: ''
 jobs:
