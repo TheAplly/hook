@@ -1,0 +1,35 @@
+name: pr-jira-format
+on:
+  pull_request_target:
+    types: [opened]
+
+jobs:
+  update_pr_title:
+    runs-on: ubuntu-latest
+    steps:
+      - name: pr-jira-format
+        uses: actions/github-script@v2
+        with:
+          debug: true
+          script: |
+            const { payload: { pull_request, organization, repository } } = context;
+            const branch_matches = pull_request.head.ref.match(/(?<=^[FSfs]+.?)(\d+)/);
+            if (!branch_matches) {
+              return;
+            }
+            const ticket_number = branch_matches[0];
+            const owner = organization.login;
+            const repo = repository.name;
+            const matches = pull_request.title.match(/(^[FSfs]+.?)?(\d+)?([: ]+)?(.+)?/);
+            const stringified_name = matches[matches.length - 1];
+            const title = `FS-${ticket_number}${stringified_name ? ' ' + stringified_name : ''}`;
+            const link = `https://flowhealth.atlassian.net/browse/FS-${ticket_number}`;
+            const link_md = `Task: [${link}](${link})\n\n`;
+            let { body } = pull_request;
+            if (body && !body.includes(link)) {
+              body = `${body}\n\n${link_md}`
+            }
+            if (!body) {
+              body = link_md;
+            }
+            await github.pulls.update({ owner, repo, pull_number: pull_request.number, title, body });

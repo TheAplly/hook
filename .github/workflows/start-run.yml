@@ -1,0 +1,26 @@
+name: start-run
+description: 'Start E2E tests on selected ENV'
+on:
+  workflow_dispatch:
+    inputs:
+      runId:
+        description: 'run ID'     
+        required: false
+        default: ''
+      portal:
+        description: 'Portal (acp, ap, cp, lis, lp, pp, tp)'
+        required: false
+        default: ''
+      grep:
+        description: 'Grep'
+        required: false
+        default: ''
+      test:
+        description: 'Filename'
+        required: false
+        default: ''
+jobs:
+  update_pr_title:
+    runs-on: ubuntu-latest
+    steps:
+      - name: start-run
