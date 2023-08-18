@@ -16,11 +16,11 @@ on:
         required: false
         default: ''
       grep:
-        description: 'Grep (ex: 6363 OR C6363 OR C6363|C6364|C6368)'
+        description: 'Grep (ex: 6363 OR C6363 OR C6363|C6364|C6368 ...)'
         required: false
         default: ''
       test:
-        description: 'Test filename (ex: user OR practiceGroup)'
+        description: 'Test filename (ex: user OR practiceGroup ...)'
         required: false
         default: ''
 jobs:
