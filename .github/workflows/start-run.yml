@@ -24,4 +24,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: start-run
-      - uses: actions/github-script@v2
+        uses: actions/github-script@v2
