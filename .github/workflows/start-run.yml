@@ -1,5 +1,5 @@
 name: start-run
-description: 'Start E2E tests on selected ENV'
+description: 'Start E2E tests on selected env'
 on:
   workflow_dispatch:
     inputs:
@@ -12,11 +12,11 @@ on:
         required: false
         default: ''
       portal:
-        description: 'Portal (ex: acp OR ap OR cp OR lis OR lp OR pp OR tp)'
+        description: 'Portal (ex: acp / ap / cp / lis / lp / pp / tp)'
         required: false
         default: ''
       grep:
-        description: 'Grep (ex: 6363 OR C6363 OR C6363|C6364|C6368 ...)'
+        description: 'Grep (ex: 6363 / C6363 / C6363|C6364|C6368 ...)'
         required: false
         default: ''
       test:
