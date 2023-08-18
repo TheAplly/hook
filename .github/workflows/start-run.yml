@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       env:
-        description: 'Env (ex: dev-minor) *'     
+        description: 'Env (ex: dev-minor)*'     
         required: false
         default: ''
       runId:
