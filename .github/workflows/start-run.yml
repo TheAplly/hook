@@ -12,15 +12,15 @@ on:
         required: false
         default: ''
       portal:
-        description: 'Portal (ex: acp, ap, cp, lis, lp, pp, tp)'
+        description: 'Portal (ex: acp OR ap OR cp OR lis OR lp OR pp OR tp)'
         required: false
         default: ''
       grep:
-        description: 'Grep (ex: 72831, C72831)'
+        description: 'Grep (ex: 6363 OR C6363 OR C6363|C6364|C6368)'
         required: false
         default: ''
       test:
-        description: 'Test filename (ex: user, practiceGroup)'
+        description: 'Test filename (ex: user OR practiceGroup)'
         required: false
         default: ''
 jobs:
