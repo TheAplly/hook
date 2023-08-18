@@ -3,6 +3,10 @@ description: 'Start E2E tests on selected ENV'
 on:
   workflow_dispatch:
     inputs:
+      env:
+        description: 'Env (ex: dev-minor)'     
+        required: false
+        default: ''
       runId:
         description: 'Run ID (ex: 9341)'     
         required: false
