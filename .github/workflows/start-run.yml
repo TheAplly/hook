@@ -20,7 +20,7 @@ on:
         required: false
         default: ''
       test:
-        description: 'Test filename (ex: user OR practiceGroup ...)'
+        description: 'Test filename (ex: practiceGroup ...)'
         required: false
         default: ''
 jobs:
